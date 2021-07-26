@@ -22,7 +22,7 @@ module Rack
             @public_resources = true
             n
           else
-            Regexp.compile("^[a-z][a-z0-9.+-]*:\\\/\\\/#{Regexp.quote(n)}$")
+            Regexp.compile("^[a-z][a-z0-9.+-]*:\\\/\\\/#{Regexp.quote(n.to_s)}$")
           end
         end.flatten
         @origins.push(blk) if blk
